@@ -71,7 +71,7 @@ document.addEventListener('click', function(event) {
       }
   });
 
-  alert('detected')
+  // alert('detected')
 
   if (!clickedExcludedDiv) {
       popup.style.display = 'block'
