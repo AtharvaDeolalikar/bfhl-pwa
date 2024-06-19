@@ -20,60 +20,62 @@ const showCoffees = () => {
 // document.addEventListener("DOMContentLoaded", showCoffees);
 
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function() {
+  window.addEventListener("load", function () {
     navigator.serviceWorker
       .register("/serviceWorker.js")
-      .then(res => console.log("service worker registered"))
-      .catch(err => console.log("service worker not registered", err));
+      .then((res) => console.log("service worker registered"))
+      .catch((err) => console.log("service worker not registered", err));
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const text = document.getElementById("docName");
-  text.innerText = urlParams.get('name') ?? "Atharva"
+  const docName = document.getElementById("docName");
+  if (docName) {
+    docName.innerText = urlParams.get("name") ?? "Atharva";
+  }
 });
 
-const addApptBtn = document.getElementById('add-appt-btn')
-const loaderElm = document.getElementById('loader')
+const addApptBtn = document.getElementById("add-appt-btn");
+const loaderElm = document.getElementById("loader");
 
-addApptBtn.addEventListener('click', (e) => {
-  // let progress = 0
-  // let interval = setInterval(() => {
-  //   loaderElm.style.width = progress + '%'
-  //   progress += 5
-  //   if(progress >= 105){
-  //     clearInterval(interval)
-  //     window.location.href = 'add-appt.html'
-  //   }
-  // }, 10)
+addApptBtn &&
+  addApptBtn.addEventListener("click", (e) => {
+    // let progress = 0
+    // let interval = setInterval(() => {
+    //   loaderElm.style.width = progress + '%'
+    //   progress += 5
+    //   if(progress >= 105){
+    //     clearInterval(interval)
+    //     window.location.href = 'add-appt.html'
+    //   }
+    // }, 10)
 
-  window.location.href = 'add-appt.html'
-  e.stopPropagation()
-})
+    window.location.href = "add-appt.html";
+    e.stopPropagation();
+  });
 
+const popup = document.getElementById("popup");
 
-const popup = document.getElementById('popup')
+const patientListBtn = document.getElementById("patient-list-btn");
+patientListBtn &&
+  patientListBtn.addEventListener("click", (e) => {
+    window.location.href = "patient-list.html";
+    e.stopPropagation();
+  });
 
-
-const patientListBtn = document.getElementById('patient-list-btn')
-patientListBtn.addEventListener('click', (e) => {
-  window.location.href = 'patient-list.html'
-  e.stopPropagation()
-})
-
-document.addEventListener('click', function(event) {
-  let excludedDivs = document.querySelectorAll('.btn');
+document.addEventListener("click", function (event) {
+  let excludedDivs = document.querySelectorAll(".btn");
   let clickedExcludedDiv = false;
 
-  excludedDivs.forEach(function(div) {
-      if (div.contains(event.target)) {
-          clickedExcludedDiv = true;
-      }
+  excludedDivs.forEach(function (div) {
+    if (div.contains(event.target)) {
+      clickedExcludedDiv = true;
+    }
   });
 
   // alert('detected')
 
   if (!clickedExcludedDiv) {
-      popup.style.display = 'block'
+    popup.style.display = "block";
   }
 });
