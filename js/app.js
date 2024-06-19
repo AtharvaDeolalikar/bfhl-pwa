@@ -76,6 +76,10 @@ document.addEventListener("click", function (event) {
   // alert('detected')
 
   if (!clickedExcludedDiv) {
-    popup.style.display = "block";
+    if (popup.style.display == "none") {
+      popup.style.display = "block";
+    } else {
+      popup.style.display = "none";
+    }
   }
 });
