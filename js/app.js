@@ -37,6 +37,9 @@ const coffees = [
     image: "images/coffee9.jpg"
   }
 ];
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
 const showCoffees = () => {
   let output = "";
   coffees.forEach(
@@ -62,3 +65,8 @@ if ("serviceWorker" in navigator) {
       .catch(err => console.log("service worker not registered", err));
   });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const text = document.getElementById("docName");
+  text.innerText = urlParams.get('name') ?? "Atharva"
+});

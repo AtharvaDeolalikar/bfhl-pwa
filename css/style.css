@@ -18,3 +18,13 @@ body {
   bottom: 0;
   right: 0;
 }
+
+.docName{
+  position: absolute;
+  top: 25px;
+  left: 80px;
+  z-index: 999;
+  color: #4B4B4B;
+  font-size: 20px;
+  font-weight: 600;
+}
