@@ -1,42 +1,4 @@
 const container = document.querySelector(".container");
-const coffees = [
-  {
-    name: "Perspiciatis",
-    image: "images/coffee1.jpg"
-  },
-  {
-    name: "Voluptatem",
-    image: "images/coffee2.jpg"
-  },
-  {
-    name: "Explicabo",
-    image: "images/coffee3.jpg"
-  },
-  {
-    name: "Rchitecto",
-    image: "images/coffee4.jpg"
-  },
-  {
-    name: " Beatae",
-    image: "images/coffee5.jpg"
-  },
-  {
-    name: " Vitae",
-    image: "images/coffee6.jpg"
-  },
-  {
-    name: "Inventore",
-    image: "images/coffee7.jpg"
-  },
-  {
-    name: "Veritatis",
-    image: "images/coffee8.jpg"
-  },
-  {
-    name: "Accusantium",
-    image: "images/coffee9.jpg"
-  }
-];
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -74,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const addApptBtn = document.getElementById('add-appt-btn')
 const loaderElm = document.getElementById('loader')
 
-addApptBtn.addEventListener('click', () => {
+addApptBtn.addEventListener('click', (e) => {
   // let progress = 0
   // let interval = setInterval(() => {
   //   loaderElm.style.width = progress + '%'
@@ -86,10 +48,17 @@ addApptBtn.addEventListener('click', () => {
   // }, 10)
 
   window.location.href = 'add-appt.html'
- 
+  e.stopPropagation()
+})
+
+const overlay = document.getElementById('overlay')
+const popup = document.getElementById('popup')
+overlay.addEventListener('click', () => {
+  popup.style.display = 'block'
 })
 
 const patientListBtn = document.getElementById('patient-list-btn')
-patientListBtn.addEventListener('click', () => {
+patientListBtn.addEventListener('click', (e) => {
   window.location.href = 'patient-list.html'
+  e.stopPropagation()
 })
