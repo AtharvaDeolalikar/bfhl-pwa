@@ -3,8 +3,8 @@
   "short_name": "Bajaj Finserv Health Doctor",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#fdfdfd",
-  "theme_color": "#db4938",
+  "background_color": "#005DAC",
+  "theme_color": "#005DAC",
   "orientation": "portrait-primary",
   "icons": [
     {
