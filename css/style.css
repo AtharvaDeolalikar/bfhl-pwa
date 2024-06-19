@@ -10,7 +10,7 @@ body {
 }
 
 .homepage{
-  height: 100vh;
+  height: auto;
   width: 100%;
   position: absolute;
   top: 0;
