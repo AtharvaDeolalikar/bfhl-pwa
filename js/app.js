@@ -51,14 +51,29 @@ addApptBtn.addEventListener('click', (e) => {
   e.stopPropagation()
 })
 
-const overlay = document.getElementById('overlay')
+
 const popup = document.getElementById('popup')
-overlay.addEventListener('click', () => {
-  popup.style.display = 'block'
-})
+
 
 const patientListBtn = document.getElementById('patient-list-btn')
 patientListBtn.addEventListener('click', (e) => {
   window.location.href = 'patient-list.html'
   e.stopPropagation()
 })
+
+document.addEventListener('click', function(event) {
+  let excludedDivs = document.querySelectorAll('.btn');
+  let clickedExcludedDiv = false;
+
+  excludedDivs.forEach(function(div) {
+      if (div.contains(event.target)) {
+          clickedExcludedDiv = true;
+      }
+  });
+
+  alert('detected')
+
+  if (!clickedExcludedDiv) {
+      popup.style.display = 'block'
+  }
+});
