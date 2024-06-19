@@ -70,3 +70,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const text = document.getElementById("docName");
   text.innerText = urlParams.get('name') ?? "Atharva"
 });
+
+const addApptBtn = document.getElementById('add-appt-btn')
+const loaderElm = document.getElementById('loader')
+
+addApptBtn.addEventListener('click', () => {
+  // let progress = 0
+  // let interval = setInterval(() => {
+  //   loaderElm.style.width = progress + '%'
+  //   progress += 5
+  //   if(progress >= 105){
+  //     clearInterval(interval)
+  //     window.location.href = 'add-appt.html'
+  //   }
+  // }, 10)
+
+  window.location.href = 'add-appt.html'
+ 
+})
+
+const patientListBtn = document.getElementById('patient-list-btn')
+patientListBtn.addEventListener('click', () => {
+  window.location.href = 'patient-list.html'
+})
