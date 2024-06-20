@@ -9,7 +9,7 @@ body {
   box-sizing: border-box;
 }
 
-.homepage{
+.homepage {
   height: auto;
   width: 100%;
   position: absolute;
@@ -19,17 +19,16 @@ body {
   right: 0;
 }
 
-.docName{
+.docName {
   position: absolute;
-  top: 20px;
-  left: 68px;
+  top: 7.9vw;
+  left: 19vw;
   z-index: 999;
-  color: #4B4B4B;
-  font-size: 18px;
+  font-size: 3.2vw;
   font-weight: 600;
 }
 
-.homeNav{
+.homeNav {
   position: fixed;
   left: 0;
   bottom: 0;
