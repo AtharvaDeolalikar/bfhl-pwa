@@ -21,11 +21,12 @@ body {
 
 .docName {
   position: absolute;
-  top: 7.9vw;
+  top: 7.5vw;
   left: 19vw;
   z-index: 999;
-  font-size: 3.2vw;
+  font-size: 4.2vw;
   font-weight: 600;
+  color: #4b4b4b;
 }
 
 .homeNav {
